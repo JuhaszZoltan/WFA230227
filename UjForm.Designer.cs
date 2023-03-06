@@ -28,207 +28,198 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ujSzemelyGroupBox = new System.Windows.Forms.GroupBox();
-            this.ujDijGroupBox = new System.Windows.Forms.GroupBox();
-            this.uiLabel01 = new System.Windows.Forms.Label();
-            this.ujSzemelyNevTextBox = new System.Windows.Forms.TextBox();
-            this.uiLabel02 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.ujSzemelyButton = new System.Windows.Forms.Button();
-            this.ujDijazottButton = new System.Windows.Forms.Button();
-            this.uiLabel03 = new System.Windows.Forms.Label();
-            this.ujDijazottNevTextBox = new System.Windows.Forms.TextBox();
-            this.uiLabel04 = new System.Windows.Forms.Label();
-            this.evNumericUpDown = new System.Windows.Forms.NumericUpDown();
-            this.ujSzemelyGroupBox.SuspendLayout();
-            this.ujDijGroupBox.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.evNumericUpDown)).BeginInit();
-            this.SuspendLayout();
+            ujSzemelyGroupBox = new GroupBox();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            ujSzemelyButton = new Button();
+            ujSzemelyFoglalkozasokTextBox = new TextBox();
+            uiLabel02 = new Label();
+            ujSzemelyNevTextBox = new TextBox();
+            uiLabel01 = new Label();
+            ujDijGroupBox = new GroupBox();
+            evNumericUpDown = new NumericUpDown();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            ujDijazottButton = new Button();
+            ujDijazottNevTextBox = new TextBox();
+            uiLabel04 = new Label();
+            uiLabel03 = new Label();
+            ujSzemelyGroupBox.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            ujDijGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)evNumericUpDown).BeginInit();
+            tableLayoutPanel2.SuspendLayout();
+            SuspendLayout();
             // 
             // ujSzemelyGroupBox
             // 
-            this.ujSzemelyGroupBox.BackColor = System.Drawing.Color.LightCoral;
-            this.ujSzemelyGroupBox.Controls.Add(this.tableLayoutPanel1);
-            this.ujSzemelyGroupBox.Controls.Add(this.textBox2);
-            this.ujSzemelyGroupBox.Controls.Add(this.uiLabel02);
-            this.ujSzemelyGroupBox.Controls.Add(this.ujSzemelyNevTextBox);
-            this.ujSzemelyGroupBox.Controls.Add(this.uiLabel01);
-            this.ujSzemelyGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ujSzemelyGroupBox.Location = new System.Drawing.Point(12, 12);
-            this.ujSzemelyGroupBox.Name = "ujSzemelyGroupBox";
-            this.ujSzemelyGroupBox.Size = new System.Drawing.Size(360, 202);
-            this.ujSzemelyGroupBox.TabIndex = 0;
-            this.ujSzemelyGroupBox.TabStop = false;
-            this.ujSzemelyGroupBox.Text = "Új személy felvétele";
-            // 
-            // ujDijGroupBox
-            // 
-            this.ujDijGroupBox.BackColor = System.Drawing.Color.LightCoral;
-            this.ujDijGroupBox.Controls.Add(this.evNumericUpDown);
-            this.ujDijGroupBox.Controls.Add(this.tableLayoutPanel2);
-            this.ujDijGroupBox.Controls.Add(this.ujDijazottNevTextBox);
-            this.ujDijGroupBox.Controls.Add(this.uiLabel04);
-            this.ujDijGroupBox.Controls.Add(this.uiLabel03);
-            this.ujDijGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.ujDijGroupBox.Location = new System.Drawing.Point(12, 224);
-            this.ujDijGroupBox.Name = "ujDijGroupBox";
-            this.ujDijGroupBox.Size = new System.Drawing.Size(360, 145);
-            this.ujDijGroupBox.TabIndex = 0;
-            this.ujDijGroupBox.TabStop = false;
-            this.ujDijGroupBox.Text = "Új díj kiosztása";
-            // 
-            // uiLabel01
-            // 
-            this.uiLabel01.AutoSize = true;
-            this.uiLabel01.Location = new System.Drawing.Point(96, 48);
-            this.uiLabel01.Name = "uiLabel01";
-            this.uiLabel01.Size = new System.Drawing.Size(45, 21);
-            this.uiLabel01.TabIndex = 0;
-            this.uiLabel01.Text = "Név:";
-            // 
-            // ujSzemelyNevTextBox
-            // 
-            this.ujSzemelyNevTextBox.Location = new System.Drawing.Point(147, 45);
-            this.ujSzemelyNevTextBox.Name = "ujSzemelyNevTextBox";
-            this.ujSzemelyNevTextBox.Size = new System.Drawing.Size(193, 29);
-            this.ujSzemelyNevTextBox.TabIndex = 1;
-            // 
-            // uiLabel02
-            // 
-            this.uiLabel02.AutoSize = true;
-            this.uiLabel02.Location = new System.Drawing.Point(17, 95);
-            this.uiLabel02.Name = "uiLabel02";
-            this.uiLabel02.Size = new System.Drawing.Size(124, 21);
-            this.uiLabel02.TabIndex = 0;
-            this.uiLabel02.Text = "Foglalkozások:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(147, 92);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 29);
-            this.textBox2.TabIndex = 1;
+            ujSzemelyGroupBox.BackColor = Color.LightCoral;
+            ujSzemelyGroupBox.Controls.Add(tableLayoutPanel1);
+            ujSzemelyGroupBox.Controls.Add(ujSzemelyFoglalkozasokTextBox);
+            ujSzemelyGroupBox.Controls.Add(uiLabel02);
+            ujSzemelyGroupBox.Controls.Add(ujSzemelyNevTextBox);
+            ujSzemelyGroupBox.Controls.Add(uiLabel01);
+            ujSzemelyGroupBox.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ujSzemelyGroupBox.Location = new Point(12, 12);
+            ujSzemelyGroupBox.Name = "ujSzemelyGroupBox";
+            ujSzemelyGroupBox.Size = new Size(360, 202);
+            ujSzemelyGroupBox.TabIndex = 0;
+            ujSzemelyGroupBox.TabStop = false;
+            ujSzemelyGroupBox.Text = "Új személy felvétele";
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 3;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Controls.Add(this.ujSzemelyButton, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(6, 147);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(348, 49);
-            this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 3;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.66666F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.Controls.Add(this.ujDijazottButton, 1, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 90);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(348, 49);
-            this.tableLayoutPanel2.TabIndex = 2;
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66667F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66.66666F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66667F));
+            tableLayoutPanel1.Controls.Add(ujSzemelyButton, 1, 0);
+            tableLayoutPanel1.Location = new Point(6, 147);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 49F));
+            tableLayoutPanel1.Size = new Size(348, 49);
+            tableLayoutPanel1.TabIndex = 2;
             // 
             // ujSzemelyButton
             // 
-            this.ujSzemelyButton.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ujSzemelyButton.ForeColor = System.Drawing.Color.Firebrick;
-            this.ujSzemelyButton.Location = new System.Drawing.Point(61, 3);
-            this.ujSzemelyButton.Name = "ujSzemelyButton";
-            this.ujSzemelyButton.Size = new System.Drawing.Size(226, 43);
-            this.ujSzemelyButton.TabIndex = 0;
-            this.ujSzemelyButton.Text = "Új személy";
-            this.ujSzemelyButton.UseVisualStyleBackColor = false;
+            ujSzemelyButton.BackColor = Color.WhiteSmoke;
+            ujSzemelyButton.ForeColor = Color.Firebrick;
+            ujSzemelyButton.Location = new Point(61, 3);
+            ujSzemelyButton.Name = "ujSzemelyButton";
+            ujSzemelyButton.Size = new Size(225, 43);
+            ujSzemelyButton.TabIndex = 0;
+            ujSzemelyButton.Text = "Új személy";
+            ujSzemelyButton.UseVisualStyleBackColor = false;
             // 
-            // ujDijazottButton
+            // ujSzemelyFoglalkozasokTextBox
             // 
-            this.ujDijazottButton.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ujDijazottButton.ForeColor = System.Drawing.Color.Firebrick;
-            this.ujDijazottButton.Location = new System.Drawing.Point(61, 3);
-            this.ujDijazottButton.Name = "ujDijazottButton";
-            this.ujDijazottButton.Size = new System.Drawing.Size(226, 43);
-            this.ujDijazottButton.TabIndex = 0;
-            this.ujDijazottButton.Text = "Új József Attila díj";
-            this.ujDijazottButton.UseVisualStyleBackColor = false;
+            ujSzemelyFoglalkozasokTextBox.Location = new Point(147, 92);
+            ujSzemelyFoglalkozasokTextBox.Name = "ujSzemelyFoglalkozasokTextBox";
+            ujSzemelyFoglalkozasokTextBox.Size = new Size(193, 29);
+            ujSzemelyFoglalkozasokTextBox.TabIndex = 1;
             // 
-            // uiLabel03
+            // uiLabel02
             // 
-            this.uiLabel03.AutoSize = true;
-            this.uiLabel03.Location = new System.Drawing.Point(17, 45);
-            this.uiLabel03.Name = "uiLabel03";
-            this.uiLabel03.Size = new System.Drawing.Size(45, 21);
-            this.uiLabel03.TabIndex = 0;
-            this.uiLabel03.Text = "Név:";
+            uiLabel02.AutoSize = true;
+            uiLabel02.Location = new Point(17, 95);
+            uiLabel02.Name = "uiLabel02";
+            uiLabel02.Size = new Size(124, 21);
+            uiLabel02.TabIndex = 0;
+            uiLabel02.Text = "Foglalkozások:";
             // 
-            // ujDijazottNevTextBox
+            // ujSzemelyNevTextBox
             // 
-            this.ujDijazottNevTextBox.Location = new System.Drawing.Point(68, 42);
-            this.ujDijazottNevTextBox.Name = "ujDijazottNevTextBox";
-            this.ujDijazottNevTextBox.Size = new System.Drawing.Size(162, 29);
-            this.ujDijazottNevTextBox.TabIndex = 1;
+            ujSzemelyNevTextBox.Location = new Point(147, 45);
+            ujSzemelyNevTextBox.Name = "ujSzemelyNevTextBox";
+            ujSzemelyNevTextBox.Size = new Size(193, 29);
+            ujSzemelyNevTextBox.TabIndex = 1;
             // 
-            // uiLabel04
+            // uiLabel01
             // 
-            this.uiLabel04.AutoSize = true;
-            this.uiLabel04.Location = new System.Drawing.Point(236, 45);
-            this.uiLabel04.Name = "uiLabel04";
-            this.uiLabel04.Size = new System.Drawing.Size(32, 21);
-            this.uiLabel04.TabIndex = 0;
-            this.uiLabel04.Text = "Év:";
+            uiLabel01.AutoSize = true;
+            uiLabel01.Location = new Point(96, 48);
+            uiLabel01.Name = "uiLabel01";
+            uiLabel01.Size = new Size(45, 21);
+            uiLabel01.TabIndex = 0;
+            uiLabel01.Text = "Név:";
+            // 
+            // ujDijGroupBox
+            // 
+            ujDijGroupBox.BackColor = Color.LightCoral;
+            ujDijGroupBox.Controls.Add(evNumericUpDown);
+            ujDijGroupBox.Controls.Add(tableLayoutPanel2);
+            ujDijGroupBox.Controls.Add(ujDijazottNevTextBox);
+            ujDijGroupBox.Controls.Add(uiLabel04);
+            ujDijGroupBox.Controls.Add(uiLabel03);
+            ujDijGroupBox.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ujDijGroupBox.Location = new Point(12, 224);
+            ujDijGroupBox.Name = "ujDijGroupBox";
+            ujDijGroupBox.Size = new Size(360, 145);
+            ujDijGroupBox.TabIndex = 0;
+            ujDijGroupBox.TabStop = false;
+            ujDijGroupBox.Text = "Új díj kiosztása";
             // 
             // evNumericUpDown
             // 
-            this.evNumericUpDown.Location = new System.Drawing.Point(275, 42);
-            this.evNumericUpDown.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.evNumericUpDown.Maximum = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
-            this.evNumericUpDown.Name = "evNumericUpDown";
-            this.evNumericUpDown.Size = new System.Drawing.Size(65, 29);
-            this.evNumericUpDown.TabIndex = 3;
-            this.evNumericUpDown.Value = new decimal(new int[] {
-            9999,
-            0,
-            0,
-            0});
+            evNumericUpDown.Location = new Point(275, 42);
+            evNumericUpDown.Margin = new Padding(4);
+            evNumericUpDown.Maximum = new decimal(new int[] { 9999, 0, 0, 0 });
+            evNumericUpDown.Name = "evNumericUpDown";
+            evNumericUpDown.Size = new Size(65, 29);
+            evNumericUpDown.TabIndex = 3;
+            evNumericUpDown.Value = new decimal(new int[] { 9999, 0, 0, 0 });
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66667F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66.66666F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.66667F));
+            tableLayoutPanel2.Controls.Add(ujDijazottButton, 1, 0);
+            tableLayoutPanel2.Location = new Point(6, 90);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 49F));
+            tableLayoutPanel2.Size = new Size(348, 49);
+            tableLayoutPanel2.TabIndex = 2;
+            // 
+            // ujDijazottButton
+            // 
+            ujDijazottButton.BackColor = Color.WhiteSmoke;
+            ujDijazottButton.ForeColor = Color.Firebrick;
+            ujDijazottButton.Location = new Point(61, 3);
+            ujDijazottButton.Name = "ujDijazottButton";
+            ujDijazottButton.Size = new Size(225, 43);
+            ujDijazottButton.TabIndex = 0;
+            ujDijazottButton.Text = "Új József Attila díj";
+            ujDijazottButton.UseVisualStyleBackColor = false;
+            // 
+            // ujDijazottNevTextBox
+            // 
+            ujDijazottNevTextBox.Location = new Point(68, 42);
+            ujDijazottNevTextBox.Name = "ujDijazottNevTextBox";
+            ujDijazottNevTextBox.Size = new Size(162, 29);
+            ujDijazottNevTextBox.TabIndex = 1;
+            // 
+            // uiLabel04
+            // 
+            uiLabel04.AutoSize = true;
+            uiLabel04.Location = new Point(236, 45);
+            uiLabel04.Name = "uiLabel04";
+            uiLabel04.Size = new Size(32, 21);
+            uiLabel04.TabIndex = 0;
+            uiLabel04.Text = "Év:";
+            // 
+            // uiLabel03
+            // 
+            uiLabel03.AutoSize = true;
+            uiLabel03.Location = new Point(17, 45);
+            uiLabel03.Name = "uiLabel03";
+            uiLabel03.Size = new Size(45, 21);
+            uiLabel03.TabIndex = 0;
+            uiLabel03.Text = "Név:";
             // 
             // UjForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Firebrick;
-            this.ClientSize = new System.Drawing.Size(384, 381);
-            this.Controls.Add(this.ujDijGroupBox);
-            this.Controls.Add(this.ujSzemelyGroupBox);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "UjForm";
-            this.Text = "Új adatok felvétele";
-            this.ujSzemelyGroupBox.ResumeLayout(false);
-            this.ujSzemelyGroupBox.PerformLayout();
-            this.ujDijGroupBox.ResumeLayout(false);
-            this.ujDijGroupBox.PerformLayout();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.evNumericUpDown)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(9F, 21F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Firebrick;
+            ClientSize = new Size(384, 381);
+            Controls.Add(ujDijGroupBox);
+            Controls.Add(ujSzemelyGroupBox);
+            Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(4);
+            Name = "UjForm";
+            Text = "Új adatok felvétele";
+            ujSzemelyGroupBox.ResumeLayout(false);
+            ujSzemelyGroupBox.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            ujDijGroupBox.ResumeLayout(false);
+            ujDijGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)evNumericUpDown).EndInit();
+            tableLayoutPanel2.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
@@ -236,7 +227,7 @@
         private GroupBox ujSzemelyGroupBox;
         private TableLayoutPanel tableLayoutPanel1;
         private Button ujSzemelyButton;
-        private TextBox textBox2;
+        private TextBox ujSzemelyFoglalkozasokTextBox;
         private Label uiLabel02;
         private TextBox ujSzemelyNevTextBox;
         private Label uiLabel01;

@@ -21,7 +21,6 @@ namespace WFA230227
             SelectedNev = nev;
             this.Load += OnReszletekFormLoad;
         }
-
         private void OnReszletekFormLoad(object? sender, EventArgs e)
         {
             nevLabel.Text = SelectedNev;

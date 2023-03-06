@@ -15,6 +15,12 @@ namespace WFA230227
         public UjForm()
         {
             InitializeComponent();
+            ujSzemelyButton.Click += OnUjSzemelyButtonClick;
+        }
+
+        private void OnUjSzemelyButtonClick(object? sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }
