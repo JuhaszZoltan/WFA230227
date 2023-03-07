@@ -24,14 +24,15 @@ namespace WFA230227
         private void OnUjToolStripMenuItemClick(object? sender, EventArgs e)
         {
             _ = new UjForm().ShowDialog();
-            this.Refresh();
+            MainDataGridViewLoad();
         }
 
         private void OnMainDataGridViewCellClick(object? sender, DataGridViewCellEventArgs e)
             => new ReszletekForm($"{mainDataGridView[1, e.RowIndex].Value}").ShowDialog();
 
-        private void OnMainFormLoad(object? sender, EventArgs e)
+        private void MainDataGridViewLoad()
         {
+            mainDataGridView.Rows.Clear();
             using SqlConnection connection = new(Resources.ConnectionString);
             connection.Open();
             SqlDataReader reader = new SqlCommand(
@@ -51,5 +52,8 @@ namespace WFA230227
                 }
             }
         }
+
+        private void OnMainFormLoad(object? sender, EventArgs e) =>
+            MainDataGridViewLoad();
     }
 }

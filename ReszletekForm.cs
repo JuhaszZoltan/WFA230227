@@ -48,7 +48,9 @@ namespace WFA230227
                 connection: connection)
                 .ExecuteReader();
             while (reader.Read()) evekLabel.Text += $"{reader[0]}, ";
-            evekLabel.Text = evekLabel.Text.Remove(evekLabel.Text.Length - 2);
+            if (evekLabel.Text.Length != 0)
+                evekLabel.Text = evekLabel.Text.Remove(evekLabel.Text.Length - 2);
+            else evekLabel.Text = "----";
         }
     }
 }
