@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 
 namespace WFA230227
 {
@@ -15,6 +7,17 @@ namespace WFA230227
         public InfoForm()
         {
             InitializeComponent();
+            gitHubRepoLinkLabel.LinkClicked += OnGitHubRepoLinkLabelLinkClicked;
+        }
+
+        private void OnGitHubRepoLinkLabelLinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start(
+                new ProcessStartInfo()
+                {
+                    FileName = gitHubRepoLinkLabel.Text,
+                    UseShellExecute = true,
+                });
         }
     }
 }

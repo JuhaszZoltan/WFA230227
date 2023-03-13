@@ -23,96 +23,93 @@ namespace WFA230227
 
         private void OnUjDijazottButtonClick(object? sender, EventArgs e)
         {
-            using SqlConnection connection = new(Resources.ConnectionString);
-            connection.Open();
-            SqlDataReader reader = new SqlCommand(
-                cmdText: "SELECT id FROM szemely " +
-                $"WHERE nev LIKE '{ujDijazottNevTextBox.Text}';",
-                connection: connection)
-                .ExecuteReader();
 
-            if (reader.Read())
+            try
             {
-                int dijazottId = reader.GetInt32(0);
-                reader.Close();
-
-                reader = new SqlCommand(
-                    cmdText: "SELECT MAX(id) FROM kituntetes",
+                using SqlConnection connection = new(Resources.ConnectionString);
+                connection.Open();
+                SqlDataReader reader = new SqlCommand(
+                    cmdText: "SELECT id FROM szemely " +
+                    $"WHERE nev LIKE '{ujDijazottNevTextBox.Text}';",
                     connection: connection)
-                .ExecuteReader();
-                reader.Read();
-                int dijId = reader.GetInt32(0) + 1;
-                reader.Close();
+                    .ExecuteReader();
 
-                SqlDataAdapter adapter = new()
+                if (reader.Read())
                 {
-                    InsertCommand = new(
-                        cmdText: "INSERT INTO kituntetes VALUES " +
-                        $"({dijId}, {dijazottId}, '{evNumericUpDown.Value}');",
-                        connection: connection),
-                };
-                adapter.InsertCommand.ExecuteNonQuery();
+                    int dijazottId = reader.GetInt32(0);
+                    reader.Close();
 
-                MessageBox.Show(
-                    caption: "SIKERES MÓDOSÍTÁS!",
-                    text: $"{ujDijazottNevTextBox.Text} díja sikeresen rögzítésre került az adatbázisba!",
-                    buttons: MessageBoxButtons.OK,
-                    icon: MessageBoxIcon.Information);
+                    reader = new SqlCommand(
+                        cmdText: "SELECT MAX(id) FROM kituntetes",
+                        connection: connection)
+                    .ExecuteReader();
+                    reader.Read();
+                    int dijId = reader.GetInt32(0) + 1;
+                    reader.Close();
+
+                    SqlDataAdapter adapter = new()
+                    {
+                        InsertCommand = new(
+                            cmdText: "INSERT INTO kituntetes VALUES " +
+                            $"({dijId}, {dijazottId}, '{evNumericUpDown.Value}');",
+                            connection: connection),
+                    };
+                    adapter.InsertCommand.ExecuteNonQuery();
+
+                    MessageBox.Show(
+                        caption: "SIKERES MÓDOSÍTÁS!",
+                        text: $"{ujDijazottNevTextBox.Text} díja sikeresen rögzítésre került az adatbázisba!",
+                        buttons: MessageBoxButtons.OK,
+                        icon: MessageBoxIcon.Information);
+                }
+                else throw new Exception(
+                    $"{ujDijazottNevTextBox.Text} nem lehet József Attila Díj jelöltje,\n" +
+                    $"mivel a neve még nem szerepel az adatbázisban!");
             }
-            else
+            catch (Exception ex)
             {
                 MessageBox.Show(
                     caption: "HIBA!",
-                    text: $"{ujDijazottNevTextBox.Text} nem lehet József Attila Díj jelöltje,\n" +
-                    $"mivel a neve még nem szerepel az adatbázisban!",
+                    text: ex.Message,
                     buttons: MessageBoxButtons.OK,
                     icon: MessageBoxIcon.Error);
-            }
 
+            }
         }
 
         private void OnUjSzemelyButtonClick(object? sender, EventArgs e)
         {
-            using SqlConnection connection = new(Resources.ConnectionString);
-            connection.Open();
-            SqlDataReader reader = new SqlCommand(
-                cmdText: "SELECT MAX(id) FROM szemely;",
-                connection: connection)
-                .ExecuteReader();
-            reader.Read();
-            int nextId = reader.GetInt32(0) + 1;
-            reader.Close();
-
-            string errorMsg = string.Empty;
-
-            if (string.IsNullOrWhiteSpace(ujSzemelyNevTextBox.Text))
-                errorMsg += "A 'név' mező kitöltése kötelező!\n";
-            if (string.IsNullOrEmpty(ujSzemelyFoglalkozasokTextBox.Text))
-                errorMsg += "A 'foglalkozások' mező kitöltése kötelező!\n";
-
-            reader = new SqlCommand(
-                cmdText: "SELECT nev FROM szemely " +
-                $"WHERE nev LIKE '{ujSzemelyNevTextBox.Text}';",
-                connection: connection)
-                .ExecuteReader();
-            if (reader.Read())
-                errorMsg += "Ilyen név már szerepel az adatbázisba!\n";
-            reader.Close();
-
-            if (!string.IsNullOrEmpty(errorMsg))
-                MessageBox.Show(
-                    caption: "HIBA!",
-                    text: errorMsg,
-                    buttons: MessageBoxButtons.OK,
-                    icon: MessageBoxIcon.Error);
-            else
+            try
             {
+                using SqlConnection connection = new(Resources.ConnectionString);
+                connection.Open();
+                SqlDataReader reader = new SqlCommand(
+                    cmdText: "SELECT MAX(id) FROM szemely;",
+                    connection: connection)
+                    .ExecuteReader();
+                reader.Read();
+                int nextId = reader.GetInt32(0) + 1;
+                reader.Close();
+
+                if (string.IsNullOrWhiteSpace(ujSzemelyNevTextBox.Text))
+                    throw new Exception("A 'név' mező kitöltése kötelező!");
+                if (string.IsNullOrEmpty(ujSzemelyFoglalkozasokTextBox.Text))
+                    throw new Exception("A 'foglalkozások' mező kitöltése kötelező!");
+
+                reader = new SqlCommand(
+                    cmdText: "SELECT nev FROM szemely " +
+                    $"WHERE nev LIKE '{ujSzemelyNevTextBox.Text}';",
+                    connection: connection)
+                    .ExecuteReader();
+                if (reader.Read()) throw new Exception("Ilyen név már szerepel az adatbázisba!");
+                reader.Close();
+                
                 SqlDataAdapter adapter = new()
                 {
                     InsertCommand = new(
-                        cmdText: "INSERT INTO szemely VALUES " +
-                        $"({nextId}, '{ujSzemelyNevTextBox.Text}');",
-                        connection: connection),
+                            cmdText: "INSERT INTO szemely VALUES " +
+                            $"({nextId}, '{ujSzemelyNevTextBox.Text}');",
+                            connection: connection),
                 };
                 adapter.InsertCommand.ExecuteNonQuery();
                 var foglalkozasok = ujSzemelyFoglalkozasokTextBox.Text.Split(", ");
@@ -121,7 +118,7 @@ namespace WFA230227
                     adapter = new()
                     {
                         InsertCommand = new(
-                            cmdText:"INSERT INTO foglalkozas VALUES " +
+                            cmdText: "INSERT INTO foglalkozas VALUES " +
                             $"({nextId}, '{f}')",
                             connection: connection),
                     };
@@ -133,13 +130,22 @@ namespace WFA230227
                     text: $"{ujSzemelyNevTextBox.Text} hozzáadása az adatbázishoz megtörtént!",
                     buttons: MessageBoxButtons.OK,
                     icon: MessageBoxIcon.Information);
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    caption: "HIBA!",
+                    text: ex.Message,
+                    buttons: MessageBoxButtons.OK,
+                    icon: MessageBoxIcon.Error);
+            }
+            finally
+            {
                 ujDijazottNevTextBox.Text = ujSzemelyNevTextBox.Text;
                 ujSzemelyNevTextBox.Text = string.Empty;
                 ujSzemelyFoglalkozasokTextBox.Text = string.Empty;
                 evNumericUpDown.Value = DateTime.Today.Year;
             }
-
         }
     }
 }
